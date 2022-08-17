@@ -1,10 +1,3 @@
-//
-//  GarmentAppUITests.swift
-//  GarmentAppUITests
-//
-//  Created by Charlie Rick on 2022-08-17.
-//
-
 import XCTest
 
 class GarmentAppUITests: XCTestCase {

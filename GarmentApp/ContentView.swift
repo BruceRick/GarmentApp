@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  GarmentApp
-//
-//  Created by Charlie Rick on 2022-08-17.
-//
-
 import SwiftUI
 
 struct ContentView: View {

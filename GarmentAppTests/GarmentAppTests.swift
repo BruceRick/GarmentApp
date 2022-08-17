@@ -1,10 +1,3 @@
-//
-//  GarmentAppTests.swift
-//  GarmentAppTests
-//
-//  Created by Charlie Rick on 2022-08-17.
-//
-
 import XCTest
 @testable import GarmentApp
 
