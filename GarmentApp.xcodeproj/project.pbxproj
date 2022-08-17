@@ -16,6 +16,10 @@
 		CBBFD60028AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD5FF28AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift */; };
 		CBBFD60D28AD840C0009E61B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD60C28AD840C0009E61B /* DetailView.swift */; };
 		CBBFD61228AD8DD40009E61B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61128AD8DD40009E61B /* AddView.swift */; };
+		CBBFD61528AD979C0009E61B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CBBFD61428AD979C0009E61B /* ComposableArchitecture */; };
+		CBBFD61A28AD98BD0009E61B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61928AD98BD0009E61B /* List.swift */; };
+		CBBFD61C28ADA0150009E61B /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61B28ADA0150009E61B /* Add.swift */; };
+		CBBFD61E28ADA3C80009E61B /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61D28ADA3C80009E61B /* Detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,9 @@
 		CBBFD5FF28AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CBBFD60C28AD840C0009E61B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CBBFD61128AD8DD40009E61B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		CBBFD61928AD98BD0009E61B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		CBBFD61B28ADA0150009E61B /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
+		CBBFD61D28ADA3C80009E61B /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBBFD61528AD979C0009E61B /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				CBBFD5E228AD80C50009E61B /* GarmentApp.swift */,
-				CBBFD61028AD84210009E61B /* Views */,
+				CBBFD61028AD84210009E61B /* Features */,
 				CBBFD5E628AD80CE0009E61B /* Assets.xcassets */,
 				CBBFD5E828AD80CE0009E61B /* Preview Content */,
 			);
@@ -131,14 +139,41 @@
 			path = GarmentAppUITests;
 			sourceTree = "<group>";
 		};
-		CBBFD61028AD84210009E61B /* Views */ = {
+		CBBFD61028AD84210009E61B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFD61628AD983C0009E61B /* List */,
+				CBBFD61728AD98460009E61B /* Add */,
+				CBBFD61828AD98490009E61B /* Detail */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		CBBFD61628AD983C0009E61B /* List */ = {
 			isa = PBXGroup;
 			children = (
 				CBBFD5E428AD80C50009E61B /* ListView.swift */,
-				CBBFD61128AD8DD40009E61B /* AddView.swift */,
-				CBBFD60C28AD840C0009E61B /* DetailView.swift */,
+				CBBFD61928AD98BD0009E61B /* List.swift */,
 			);
-			path = Views;
+			path = List;
+			sourceTree = "<group>";
+		};
+		CBBFD61728AD98460009E61B /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFD61128AD8DD40009E61B /* AddView.swift */,
+				CBBFD61B28ADA0150009E61B /* Add.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		CBBFD61828AD98490009E61B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFD60C28AD840C0009E61B /* DetailView.swift */,
+				CBBFD61D28ADA3C80009E61B /* Detail.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +192,9 @@
 			dependencies = (
 			);
 			name = GarmentApp;
+			packageProductDependencies = (
+				CBBFD61428AD979C0009E61B /* ComposableArchitecture */,
+			);
 			productName = GarmentApp;
 			productReference = CBBFD5DF28AD80C50009E61B /* GarmentApp.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +267,9 @@
 				Base,
 			);
 			mainGroup = CBBFD5D628AD80C50009E61B;
+			packageReferences = (
+				CBBFD61328AD979C0009E61B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = CBBFD5E028AD80C50009E61B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -272,8 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBBFD61228AD8DD40009E61B /* AddView.swift in Sources */,
+				CBBFD61E28ADA3C80009E61B /* Detail.swift in Sources */,
 				CBBFD5E528AD80C50009E61B /* ListView.swift in Sources */,
 				CBBFD5E328AD80C50009E61B /* GarmentApp.swift in Sources */,
+				CBBFD61C28ADA0150009E61B /* Add.swift in Sources */,
+				CBBFD61A28AD98BD0009E61B /* List.swift in Sources */,
 				CBBFD60D28AD840C0009E61B /* DetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +637,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CBBFD61328AD979C0009E61B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBBFD61428AD979C0009E61B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBBFD61328AD979C0009E61B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBBFD5D728AD80C50009E61B /* Project object */;
 }
