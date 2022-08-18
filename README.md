@@ -6,4 +6,4 @@ Built with
 
 - SwiftUI
 - Combine
-- SwiftComposable architecture (https://github.com/pointfreeco/swift-composable-architecture)
+- SwiftComposableArchitecture (https://github.com/pointfreeco/swift-composable-architecture)
