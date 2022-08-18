@@ -14,18 +14,33 @@ struct DetailView: View {
                 }
                 HStack {
                     Text("Created On:")
-                    TextField("", text: .constant("2010-JAN-01"))
+                    TextField("", text: .constant(viewStore.created))
+                        .disabled(true)
+                        .multilineTextAlignment(.trailing)
+                }
+                HStack {
+                    Text("Last Updated:")
+                    TextField("", text: .constant(viewStore.lastUpdated))
                         .disabled(true)
                         .multilineTextAlignment(.trailing)
                 }
             }
             .navigationTitle("Details")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button(action: {
-                    print("SAVE DETAILS")
-                }, label: {
-                    Text("Save")
-                })
+                HStack {
+                    Button {
+                        viewStore.send(.delete)
+                    } label: {
+                        Image(systemName: "trash.fill")
+                    }
+                        .foregroundColor(.red)
+                    Button(action: {
+                        viewStore.send(.save)
+                    }, label: {
+                        Text("Update")
+                    })
+                }
             }
         }
     }
@@ -33,14 +48,14 @@ struct DetailView: View {
 
 private extension ViewStore where State == DetailState, Action == DetailAction {
     func nameBinding() -> Binding<String> {
-        binding(get: \.garmentName, send: DetailAction.nameChanged)
+        binding(get: \.garment.name, send: DetailAction.nameChanged)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(store: Store(
-            initialState: .init(garmentName: "Pants"),
+            initialState: .init(garment: Garment(name: "Pants", creationDate: Date())),
             reducer: detailReducer,
             environment: .init()))
     }

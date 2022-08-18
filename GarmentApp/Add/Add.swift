@@ -11,7 +11,7 @@ enum AddAction: Equatable {
 }
 
 struct AddEnvironment {
-
+    
 }
 
 let addReducer = Reducer<AddState, AddAction, AddEnvironment> { state, action, environment in
@@ -20,6 +20,11 @@ let addReducer = Reducer<AddState, AddAction, AddEnvironment> { state, action, e
         state.garmentName = name
         return .none
     case .save:
+        let garment = Garment(name: state.garmentName, creationDate: Date(), lastUpdated: nil)
+        var storedGarments: [Garment] = Storage.get(.Garments) ?? []
+        storedGarments.append(garment)
+        Storage.set(storedGarments, key: .Garments)
+        state.garmentName = ""
         return .none
     }
 }

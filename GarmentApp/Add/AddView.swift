@@ -15,6 +15,7 @@ struct AddView: View {
                 }
             }
             .navigationTitle("ADD")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button(action: {
                     viewStore.send(.save)

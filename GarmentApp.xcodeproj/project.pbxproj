@@ -20,6 +20,8 @@
 		CBBFD61A28AD98BD0009E61B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61928AD98BD0009E61B /* List.swift */; };
 		CBBFD61C28ADA0150009E61B /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61B28ADA0150009E61B /* Add.swift */; };
 		CBBFD61E28ADA3C80009E61B /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61D28ADA3C80009E61B /* Detail.swift */; };
+		CBBFD62228ADABA60009E61B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD62128ADABA60009E61B /* Storage.swift */; };
+		CBBFD62528ADABB90009E61B /* Garment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD62428ADABB90009E61B /* Garment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		CBBFD61928AD98BD0009E61B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		CBBFD61B28ADA0150009E61B /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		CBBFD61D28ADA3C80009E61B /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		CBBFD62128ADABA60009E61B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		CBBFD62428ADABB90009E61B /* Garment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				CBBFD5E228AD80C50009E61B /* GarmentApp.swift */,
-				CBBFD61028AD84210009E61B /* Features */,
+				CBBFD62428ADABB90009E61B /* Garment.swift */,
+				CBBFD62128ADABA60009E61B /* Storage.swift */,
+				CBBFD61628AD983C0009E61B /* List */,
+				CBBFD61728AD98460009E61B /* Add */,
+				CBBFD61828AD98490009E61B /* Detail */,
 				CBBFD5E628AD80CE0009E61B /* Assets.xcassets */,
 				CBBFD5E828AD80CE0009E61B /* Preview Content */,
 			);
@@ -137,16 +145,6 @@
 				CBBFD5FF28AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift */,
 			);
 			path = GarmentAppUITests;
-			sourceTree = "<group>";
-		};
-		CBBFD61028AD84210009E61B /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				CBBFD61628AD983C0009E61B /* List */,
-				CBBFD61728AD98460009E61B /* Add */,
-				CBBFD61828AD98490009E61B /* Detail */,
-			);
-			path = Features;
 			sourceTree = "<group>";
 		};
 		CBBFD61628AD983C0009E61B /* List */ = {
@@ -314,10 +312,12 @@
 			files = (
 				CBBFD61228AD8DD40009E61B /* AddView.swift in Sources */,
 				CBBFD61E28ADA3C80009E61B /* Detail.swift in Sources */,
+				CBBFD62528ADABB90009E61B /* Garment.swift in Sources */,
 				CBBFD5E528AD80C50009E61B /* ListView.swift in Sources */,
 				CBBFD5E328AD80C50009E61B /* GarmentApp.swift in Sources */,
 				CBBFD61C28ADA0150009E61B /* Add.swift in Sources */,
 				CBBFD61A28AD98BD0009E61B /* List.swift in Sources */,
+				CBBFD62228ADABA60009E61B /* Storage.swift in Sources */,
 				CBBFD60D28AD840C0009E61B /* DetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
