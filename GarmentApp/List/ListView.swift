@@ -16,7 +16,10 @@ struct ListView: View {
                 .navigationTitle("List")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    saveButton(viewStore)
+                    HStack {
+                        clearButton(viewStore)
+                        addButton(viewStore)
+                    }
                 }
             }
             .navigationViewStyle(StackNavigationViewStyle())
@@ -70,7 +73,8 @@ struct ListView: View {
     func detailsBackNavigation(_ viewStore: ListViewStore) -> some View {
         // bit of hack to get the Composable Architecture not to mess up cell selection
         // and throw errors. This is required for the back functionality when a user taps
-        // 'update' on the details page.
+        // 'update' on the details page. Bug is rooted in isActive being enforced in a
+        // List loop.
         NavigationLink(destination: detailDestination,
                        isActive: viewStore.detailsNavigationBinding(),
                        label: { EmptyView() } )
@@ -95,13 +99,24 @@ struct ListView: View {
         Spacer()
         Text("NO GARMENTS")
             .padding(20)
+            .accessibilityIdentifier("no garments")
         Spacer()
     }
     
-    func saveButton(_ viewStore: ListViewStore) -> some View {
+    func clearButton(_ viewStore: ListViewStore) -> some View {
+        Button {
+            viewStore.send(.clear)
+        } label: {
+            Text("Clear")
+        }
+        .foregroundColor(.red)
+        .accessibilityIdentifier("clear")
+    }
+    
+    func addButton(_ viewStore: ListViewStore) -> some View {
         NavigationLink(destination: addDestination,
                        isActive: viewStore.addNavigationBinding(),
-                       label: { Image(systemName: "plus.circle") })
+                       label: { Image(systemName: "plus.circle").accessibilityIdentifier("add") })
     }
 }
 

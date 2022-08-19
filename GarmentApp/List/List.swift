@@ -32,6 +32,7 @@ enum ListAction: Equatable {
     case sortGarments
     case navigate(NavigationState)
     case selected(Garment?)
+    case clear
     case add(AddAction)
     case detail(DetailAction)
 }
@@ -71,6 +72,9 @@ let listReducer = Reducer<ListState, ListAction, ListEnvironment>.combine(
           state.navigation = navigationState
           state.detail = nil
           return .none
+      case .clear:
+          Storage.removeAll()
+          return .init(value: .fetchGarments)
       case .add(.save), .detail(.save), .detail(.delete):
           state.navigation = .None
           return .init(value: .fetchGarments)
