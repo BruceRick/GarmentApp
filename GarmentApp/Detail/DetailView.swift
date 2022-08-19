@@ -11,37 +11,45 @@ struct DetailView: View {
                     Text("Garment Name:")
                     TextField("", text: viewStore.nameBinding())
                         .multilineTextAlignment(.trailing)
+                        .accessibilityIdentifier("garment name")
                 }
                 HStack {
                     Text("Created On:")
                     TextField("", text: .constant(viewStore.created))
                         .disabled(true)
                         .multilineTextAlignment(.trailing)
+                        .accessibilityIdentifier("created")
                 }
                 HStack {
                     Text("Last Updated:")
                     TextField("", text: .constant(viewStore.lastUpdated))
                         .disabled(true)
                         .multilineTextAlignment(.trailing)
+                        .accessibilityIdentifier("updated")
                 }
             }
             .navigationTitle("Details")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                HStack {
-                    Button {
-                        viewStore.send(.delete)
-                    } label: {
-                        Image(systemName: "trash.fill")
-                    }
-                        .foregroundColor(.red)
-                    Button(action: {
-                        viewStore.send(.save)
-                    }, label: {
-                        Text("Update")
-                    })
-                }
+                toolbar(viewStore)
             }
+        }
+    }
+    
+    func toolbar(_ viewStore: ViewStore<DetailState, DetailAction>) -> some View {
+        HStack {
+            Button {
+                viewStore.send(.delete)
+            } label: {
+                Image(systemName: "trash.fill")
+            }
+                .foregroundColor(.red)
+                .accessibilityIdentifier("delete")
+            Button(action: {
+                viewStore.send(.save)
+            }, label: {
+                Text("Update")
+            }).accessibilityIdentifier("update")
         }
     }
 }

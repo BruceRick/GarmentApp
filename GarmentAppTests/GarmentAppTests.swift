@@ -5,12 +5,17 @@ import XCTest
 
 @MainActor
 final class GarmentAppTests: XCTestCase {
-    let mainQueue = DispatchQueue.test
-    
-    func testListAdd() async {
+    override func setUpWithError() throws {
         let emptyGarments: [Garment] = []
         Storage.set(emptyGarments, key: .Garments)
-        
+    }
+    
+    override func tearDownWithError() throws {
+        let emptyGarments: [Garment] = []
+        Storage.set(emptyGarments, key: .Garments)
+    }
+    
+    func testListAdd() async {
         let store = TestStore(
             initialState: ListState(),
             reducer: listReducer,
@@ -37,14 +42,9 @@ final class GarmentAppTests: XCTestCase {
         }
         
         await store.receive(.sortGarments)
-        
-        Storage.set(emptyGarments, key: .Garments)
     }
     
     func testListDetailUpdate() async {
-        let emptyGarments: [Garment] = []
-        Storage.set(emptyGarments, key: .Garments)
-        
         let store = TestStore(
             initialState: ListState(),
             reducer: listReducer,
@@ -74,14 +74,12 @@ final class GarmentAppTests: XCTestCase {
         }
         
         await store.receive(.sortGarments)
-        
-        Storage.set(emptyGarments, key: .Garments)
     }
     
     func testListDetailDelete() async {
         let garment = Garment(name: "Test", creationDate: Date())
-        let emptyGarments: [Garment] = [garment]
-        Storage.set(emptyGarments, key: .Garments)
+        let garments: [Garment] = [garment]
+        Storage.set(garments, key: .Garments)
         
         let store = TestStore(
             initialState: ListState(),
@@ -94,20 +92,18 @@ final class GarmentAppTests: XCTestCase {
             $0.navigation = .Detail
         }
         
-        var garments: [Garment]? = Storage.get(.Garments)
-        XCTAssertTrue(garments?.count == 1, "stored garments doesn't match")
+        var storedGarments: [Garment]? = Storage.get(.Garments)
+        XCTAssertTrue(storedGarments?.count == 1, "stored garments doesn't match")
         
         await store.send(.detail(.delete)) {
             $0.navigation = .None
         }
         
-        garments = Storage.get(.Garments)
-        XCTAssertTrue(garments?.count == 0, "stored garments doesn't match")
+        storedGarments = Storage.get(.Garments)
+        XCTAssertTrue(storedGarments?.count == 0, "stored garments doesn't match")
         
         await store.receive(.fetchGarments)
         await store.receive(.sortGarments)
-        
-        Storage.set(emptyGarments, key: .Garments)
     }
     
     func testListSort() async {
@@ -155,8 +151,5 @@ final class GarmentAppTests: XCTestCase {
                 alpha
             ]
         }
-        
-        let emptyGarments: [Garment] = []
-        Storage.set(emptyGarments, key: .Garments)
     }
 }

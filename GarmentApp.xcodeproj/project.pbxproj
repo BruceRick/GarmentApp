@@ -13,7 +13,6 @@
 		CBBFD5EA28AD80CE0009E61B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBBFD5E928AD80CE0009E61B /* Preview Assets.xcassets */; };
 		CBBFD5F428AD80CF0009E61B /* GarmentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD5F328AD80CF0009E61B /* GarmentAppTests.swift */; };
 		CBBFD5FE28AD80CF0009E61B /* GarmentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD5FD28AD80CF0009E61B /* GarmentAppUITests.swift */; };
-		CBBFD60028AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD5FF28AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift */; };
 		CBBFD60D28AD840C0009E61B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD60C28AD840C0009E61B /* DetailView.swift */; };
 		CBBFD61228AD8DD40009E61B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD61128AD8DD40009E61B /* AddView.swift */; };
 		CBBFD61528AD979C0009E61B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CBBFD61428AD979C0009E61B /* ComposableArchitecture */; };
@@ -51,7 +50,6 @@
 		CBBFD5F328AD80CF0009E61B /* GarmentAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentAppTests.swift; sourceTree = "<group>"; };
 		CBBFD5F928AD80CF0009E61B /* GarmentAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarmentAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBBFD5FD28AD80CF0009E61B /* GarmentAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentAppUITests.swift; sourceTree = "<group>"; };
-		CBBFD5FF28AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CBBFD60C28AD840C0009E61B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CBBFD61128AD8DD40009E61B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CBBFD61928AD98BD0009E61B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				CBBFD5FD28AD80CF0009E61B /* GarmentAppUITests.swift */,
-				CBBFD5FF28AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift */,
 			);
 			path = GarmentAppUITests;
 			sourceTree = "<group>";
@@ -335,7 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBBFD5FE28AD80CF0009E61B /* GarmentAppUITests.swift in Sources */,
-				CBBFD60028AD80CF0009E61B /* GarmentAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

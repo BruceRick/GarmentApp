@@ -11,6 +11,7 @@ struct AddView: View {
                     Text("Garment Name:")
                     TextField("Enter Name", text: viewStore.nameBinding())
                         .multilineTextAlignment(.trailing)
+                        .accessibilityIdentifier("garment name")
                         
                 }
             }
@@ -21,7 +22,7 @@ struct AddView: View {
                     viewStore.send(.save)
                 }, label: {
                     Text("Save")
-                })
+                }).accessibilityIdentifier("save")
             }
         }
     }
