@@ -3,7 +3,7 @@ import ComposableArchitecture
 
 struct DetailState: Equatable {
     var garment: Garment
-    var dateFormatter: DateFormatter = {
+    lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM dd, YYYY h:mm a"
         formatter.locale = .current
@@ -11,12 +11,14 @@ struct DetailState: Equatable {
     }()
     
     var created: String {
-        return dateFormatter.string(from: garment.creationDate)
+        var mutatableSelf = self
+        return mutatableSelf.dateFormatter.string(from: garment.creationDate)
     }
     
     var lastUpdated: String {
         if let lastUpdated = garment.lastUpdated {
-            return dateFormatter.string(from: lastUpdated)
+            var mutatableSelf = self
+            return mutatableSelf.dateFormatter.string(from: lastUpdated)
         }
         
         return "--"
